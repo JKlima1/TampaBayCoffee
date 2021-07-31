@@ -1,0 +1,57 @@
+﻿@*@model IEnumerable<TampaBayCoffee.Models.Coffee>*@
+
+@{
+    ViewBag.Title = "ReadOnlyIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Coffees</h2>
+<body>Text Here</body>
+<table id="coffees" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Brand</th>
+            <th>Name</th>
+            <th>Origin</th>
+            <th>Process</th>
+            <th>Elevation</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+</table>
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $("#coffees").dataTable({
+                "ajax": {
+                    "url": "/api/coffees",
+                    "dataSrc": ""
+                },
+                "columns": [
+                    {
+                        data: "Brand"
+                    },
+                    {
+                        data: "Name"
+                    },
+                    {
+                        data: "Origin"
+                    },
+                    {
+                        data: "Process"
+                    },
+                    {
+                        data: "ElevationRangeInMeters"
+                    },
+                    {
+                        data: "Notes"
+                    }
+                ]
+            });
+        });
+    </script>
+}
+

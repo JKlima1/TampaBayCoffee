@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "ReadOnlyIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Coffees Shops</h2>
+<h4>
+
+    Coffee Shops listed blow can be found in the Tampa Bay area.
+    This currently includes counties such as Pinellas and Hillsborough.
+    In the future, additional counties will be added.
+
+</h4>
+<table id="coffeeShops" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Roastery</th>
+            <th>Coffee(s) Used</th>
+        </tr>
+    </thead>
+</table>
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#coffeeShops").dataTable({
+                "ajax": {
+                    "url": "/api/coffeeShops",
+                    "dataSrc": ""
+                },
+                "columns": [
+                    {
+                        "data": "Name"
+                    },
+                    {
+                        "data": {add_Number : "Add_Number", streetName : "StreetName"},
+                        "render": function(data) {
+                            return data.add_Number + " " + data.streetName;
+                        }
+                    },
+                    {
+                        "data": "IsRoaster"
+                    },
+                    {
+                        "data": "CoffeeBrandsUsed"
+                    }
+                ]
+            });
+        });
+
+    </script>
+}
+
