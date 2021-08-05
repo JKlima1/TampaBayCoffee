@@ -391,6 +391,7 @@
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
     <None Include="Properties\PublishProfiles\TampaBayCoffee - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\TampaBayCoffee20210803201333 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-3.6.0-vsdoc.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
